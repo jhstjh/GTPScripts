@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Request>
+  <Select Columns="FCN0,FCN1,FCN2,FCN5" From="Zalu" />
+</Request>

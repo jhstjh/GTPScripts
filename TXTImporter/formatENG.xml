@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!-- Request xml file only has one root element: Request -->
+<Request>
+  <!-- Request can have 4 elements: Select，Insert，Update，Delete -->
+  
+  <!-- Select element has these attributes：
+          Columns: Columns to select from, separeted by comma; Optional, if none specified, return all columns by default
+          From: Table to select from, must have and cannot be empty
+          Where: Optional filtering expression (Table index column is "Index") (Syntax: http://msdn.microsoft.com/zh-cn/library/system.data.datacolumn.expression(v=vs.80).aspx )
+  -->
+  <Select Columns="A400,A401" From="CharProperty" Where="A400 = 222 OR A401 = TusuD" />
+
+  <!-- Insert element has these attributes：
+          To: Table name to insert
+          Index: Index to insert
+       For data to be inserted, it's defined by Insert elements' children elements.
+  -->
+  <Insert To="CharProperty" Index="222">
+    <!-- Insert can contain several Value children elements, each child element's Column attribute defines the column to insert, child element's value is the value to be inserted -->
+    <Value Column="A400">222</Value>
+  </Insert>
+
+  <!-- Update element has these attributes：
+          Table: Table name to update
+          Where: Optional filtering expression (Table index column is "Index") (Syntax: http://msdn.microsoft.com/zh-cn/library/system.data.datacolumn.expression(v=vs.80).aspx )
+       For data to be updated, it's defined by Update elements' children elements.
+  -->
+  <Update Table="CharProperty" Where="A400 = 222 OR A401 = TusuD">
+    <!-- Update can contain several Value children elements, each child element's Column attribute defines the column to update, child element's value is the value to be update -->
+    <Value Column="A401">TusuD</Value>
+  </Update>
+
+  <!-- Delete elements has these attributes：
+          From: Table name to update
+          Where: Optional filtering expression (Table index column is "Index") (Syntax: http://msdn.microsoft.com/zh-cn/library/system.data.datacolumn.expression(v=vs.80).aspx )
+  -->
+  <Delete From="CharProperty" Where="A400 = 222 OR A401 = TusuD" />
+
+</Request>

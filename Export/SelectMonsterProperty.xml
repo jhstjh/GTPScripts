@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Request>
+  <Select Columns="A400,A402,A602,A405,D604,D605" From="MonsterProperty" />
+</Request>

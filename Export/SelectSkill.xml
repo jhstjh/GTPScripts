@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Request>
+  <Select Columns="D800,D801,D802,A003,D804,D805,A019,D813,D814,D815" From="Skill" />
+</Request>

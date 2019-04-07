@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Request>
+  <Select Columns="A400,A401,A402,A403,A404,A405" From="CharProperty" Where="A404 = '女性角色' AND A405 = '人'" />
+  <Insert To="DlgM01" Index="33">
+    <Value Column="DZ00">33</Value>
+    <Value Column="DZ01">10</Value>
+    <Value Column="DZ02">10100</Value>
+    <Value Column="DZ03">999999</Value>
+    <Value Column="DZ04">枫岚</Value>
+    <Value Column="DZ05">插入的对话哦~</Value>
+    <Value Column="DZ06">False</Value>
+    <Value Column="DZ07">0</Value>
+    <Value Column="DY53"></Value>
+  </Insert>
+  <Update Table="DlgM01" Where="DZ04 = '枫岚' AND DZ06 = False">
+    <Value Column="DZ05">插入的对话变动了！</Value>
+  </Update>
+  <Delete From="DlgM01" Where="Index = 33" />
+</Request>

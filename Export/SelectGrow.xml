@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Request>
+  <Select Columns="DX00,DX01,DX03" From="Grow" />
+</Request>

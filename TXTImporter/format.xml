@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!-- 请求用 xml 文件只有一个根元素：Request -->
+<Request>
+  <!-- Request 可以包含四个子元素 Select，Insert，Update，Delete -->
+  
+  <!-- Select 元素包括如下属性：
+          Columns：要筛选出的列名，指定多个列名请用逗号分隔；可选，如未指定或为空，默认返回所有列
+          From：要筛选的表名，必填且不可为空
+          Where：可选的筛选条件表达式（表索引的列名为 Index）（语法参见 http://msdn.microsoft.com/zh-cn/library/system.data.datacolumn.expression(v=vs.80).aspx ）
+  -->
+  <Select Columns="A400,A401" From="CharProperty" Where="A400 = 222 OR A401 = TusuD" />
+
+  <!-- Insert 元素包括如下属性：
+          To：要插入数据的表名
+          Index：要插入数据的索引
+       对于要插入的数据，由 Insert 元素的子级元素给出
+  -->
+  <Insert To="CharProperty" Index="222">
+    <!-- Insert 可以包含若干个 Value 子元素，每个子元素的 Column 属性指定需要插入的列，每个子元素的内容为要插入到列中的值 -->
+    <Value Column="A400">222</Value>
+  </Insert>
+
+  <!-- Update 元素包括如下属性：
+          Table：要更新数据的表名
+          Where：可选的筛选条件表达式（表索引的列名为 Index）（语法参见 http://msdn.microsoft.com/zh-cn/library/system.data.datacolumn.expression(v=vs.80).aspx ）
+       对于要更新的数据，由 Update 元素的子级元素给出
+  -->
+  <Update Table="CharProperty" Where="A400 = 222 OR A401 = TusuD">
+    <!-- Update 可以包含若干个 Value 子元素，每个子元素的 Column 属性指定需要更新的列，每个子元素的内容为要更新到列中的值 -->
+    <Value Column="A401">TusuD</Value>
+  </Update>
+
+  <!-- Delete 元素包括如下属性：
+          From：要更新数据的表名
+          Where：可选的筛选条件表达式（表索引的列名为 Index）（语法参见 http://msdn.microsoft.com/zh-cn/library/system.data.datacolumn.expression(v=vs.80).aspx ）
+  -->
+  <Delete From="CharProperty" Where="A400 = 222 OR A401 = TusuD" />
+
+</Request>

@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Request>
+  <Select Columns="A000,A001,A002,A003,A004,A007,A016,A017,A018,A019,A024,A037" From="Item" />
+</Request>
